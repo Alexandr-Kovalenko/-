@@ -10,7 +10,9 @@ console.log(x + y); // 15
 console.log(x - y); // 5
 console.log(x * y); // 50
 console.log(x / y); // 2
-console.log(x % y); // 0
+console.log(x % y); // 0 - залишок від ділення
+console.log(16 % 3); // 1
+console.log(x ** y); // 100000 - x в степені y
 
 //                ОПЕРАТОРИ ПОРІВНЯННЯ
 //Використовуються для порівняння значень. Результатом свого виконання
