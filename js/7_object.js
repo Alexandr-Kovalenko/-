@@ -159,3 +159,47 @@ anna.age = 26;
 
 anna.sayHi();
 anna.sayAge();
+
+//             конструктор об'єктів
+function User(name, age, city) {
+  this.name = name;
+  this.age = age;
+  this.city = city;
+  this.sayHello = function () {
+    console.log(`Hello, i'm ${this.name}`);
+  };
+}
+
+let alex = new User("Alex", 35, "Dnipro");
+let yulia = new User("Yulia", 31, "Dnipro");
+
+console.log(alex); // User {name: 'Alex', age: 35, city: 'Dnipro', sayHello: ƒ}
+alex.sayHello(); // Hello, i'm Alex
+console.log(yulia); // User {name: 'Yulia', age: 31, city: 'Dnipro', sayHello: ƒ}
+yulia.sayHello(); // Hello, i'm Yulia
+
+//            опціональний ланцюжок
+const user1 = {
+  name: "Vitaliy",
+  age: 30,
+  address: {
+    street: {
+      name: "Svobody",
+    },
+  },
+};
+
+const user2 = {
+  name: "Anna",
+  age: 28,
+};
+
+const getUserAddress = (obj) => {
+  // console.log(obj.address.street); ----- вираз видасть помилку у разі відсутності ключа address
+  console.log(obj.address?.street?.name); // в разі відсутності отримаємо undefined
+};
+
+getUserAddress(user1); // Svobody
+//getUserAddress(user2); ----- Uncaught TypeError: Cannot read properties of undefined (reading 'street')
+// для того, щоб не допускати помилку потрібно зробити перевірку чи є у об'єкта ключ address
+getUserAddress(user2); // undefined
