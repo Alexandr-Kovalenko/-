@@ -38,12 +38,12 @@ function def1(a, b) {
   console.log(a - b); // 68
 }
 //---------------------------
-// def2(89, 21); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+def2(89, 21); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-// let def2 = function (a, b) {
-//   console.log(a - b); // 6_functions.js:41 Uncaught ReferenceError: Cannot access 'def2' before initialization
-// };
-// // в цьому випадку ми НЕ МОЖЕМО викликати функцію до її оголошення
+let def2 = function (a, b) {
+  console.log(a - b); // 6_functions.js:41 Uncaught ReferenceError: Cannot access 'def2' before initialization
+};
+// в цьому випадку ми НЕ МОЖЕМО викликати функцію до її оголошення
 
 //---------------------------
 let def3 = function (a, b) {
