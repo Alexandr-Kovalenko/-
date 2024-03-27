@@ -157,3 +157,34 @@ console.log(reduceArr);
 // перевірка на массив
 
 console.log(Array.isArray(newArr)); // true
+
+//                  Деструктуризація
+
+const arrUsers = [
+  "Vitaliy",
+  "Andriy",
+  "Oleksandr",
+  "Dmytro",
+  "Oleg",
+  "ivan",
+  "Viktor",
+];
+// створити змінні і присвоїти їм значення з массиву
+const user1 = arrUsers[0];
+const user2 = arrUsers[1];
+const user3 = arrUsers[2];
+const user4 = arrUsers[3];
+const user5 = arrUsers[4];
+const user6 = arrUsers[5];
+const user7 = arrUsers[6];
+
+console.log(user1, user2, user3, user4, user5, user6, user7); // Vitaliy Andriy Oleksandr Dmytro Oleg ivan Viktor
+// інший варіант
+const [name1, name2, name3, name4, name5, name6, name7] = arrUsers;
+
+console.log(name1, name2, name3, name4, name5, name6, name7); // Vitaliy Andriy Oleksandr Dmytro Oleg ivan Viktor
+// якщо потрібно створити декілька змінних, а те що залиштлось помістити в новий массив
+const [usName1, usName2, usName3, ...otherNames] = arrUsers;
+
+console.log(usName1, usName2, usName3); // Vitaliy Andriy Oleksandr
+console.log(otherNames); // (4) ['Dmytro', 'Oleg', 'ivan', 'Viktor']

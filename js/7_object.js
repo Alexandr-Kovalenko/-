@@ -203,3 +203,35 @@ getUserAddress(user1); // Svobody
 //getUserAddress(user2); ----- Uncaught TypeError: Cannot read properties of undefined (reading 'street')
 // для того, щоб не допускати помилку потрібно зробити перевірку чи є у об'єкта ключ address
 getUserAddress(user2); // undefined
+
+//                      keys, values, entries
+const userAlex = {
+  name: "Alex",
+  age: 35,
+};
+
+console.log(Object.keys(userAlex)); // (2) ['name', 'age']
+console.log(Object.values(userAlex)); // (2) ['Alex', 35]
+console.log(Object.entries(userAlex)); // (2) [Array(2), Array(2)]
+
+const arr = Object.entries(userAlex); // отримуємо массив, можемо працювати методами массивів
+console.log(arr); // (2) [Array(2), Array(2)]
+
+const newUserAlex = Object.fromEntries(arr); // отримуємо знову об'єкт
+console.log(newUserAlex); // {name: 'Alex', age: 35}
+// таким чином ми можемо змінювати ключі і їх значення
+
+//                  Деструктуризація
+const myCar = {
+  brand: "Volkswagen",
+  carBody: "hatchback",
+  color: "grey",
+  fuel: "benzine",
+};
+
+const color = "black";
+/* нижче ми не можемо знову оголосити змінну "color", але нам потрібно
+саме "color", тому використаємо таку конструкцію "color:color2" */
+const { brand, carBody, color: color2, fuel } = myCar;
+
+console.log(brand, carBody, color, fuel); // Volkswagen hatchback grey benzine
