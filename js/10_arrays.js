@@ -88,7 +88,7 @@ console.log(result3); // {name: 'Anna', age: 30}
 const result4 = usersArr.find((item) => item.name === "Ivan");
 console.log(result4); // undefined
 // якщо потрібно вивести всі об'єкти, які мають ідентичні ключі по пошуковому критерію
-const result5 = usersArr.filter((item) => item.name === "Anna"); // виведе тільки один об'єкт
+const result5 = usersArr.filter((item) => item.name === "Anna");
 console.log(result5); // (2) [{…}, {…}] ==>    0: {name: 'Anna', age: 30}  1: {name: 'Anna', age: 25}
 const result6 = usersArr.filter((item) => item.name === "Ivan");
 console.log(result6); // []
