@@ -78,3 +78,67 @@ console.log(null ?? undefined ?? 0 ?? true); // 0
 console.log(undefined ?? null ?? undefined ?? false ?? "" ?? 1); // false
 console.log(null ?? undefined ?? null); // null
 console.log(undefined ?? null ?? undefined ?? undefined); // undefined
+
+//                     rest
+
+function showNumbers(a, b) {
+  console.log(a);
+  console.log(b);
+}
+
+showNumbers(8, 65, 1, 45, 63, 45); // 8 65
+
+/* інші аргументи не будуть відображатись, але якщо вони приходять с сервера
+і ми не занємо скільки їх і нам потрібно відобразити всі? */
+
+function showNumbers1(...rest) {
+  for (let i = 0; i < rest.length; i++) {
+    console.log(rest[i]);
+  }
+}
+
+showNumbers1(8, 65, 1, 45, 63, 45); // 8 65 1 45 63 45
+
+// або якісь ми знаємо а інші не знаємо
+
+function showSumNumbers(a, b, ...rest) {
+  console.log(a + b);
+  console.log(
+    rest.reduce((acc, item) => {
+      return acc + item;
+    }, 0)
+  );
+}
+
+showSumNumbers(8, 65, 1, 45, 63, 45); // 73 154
+
+//                      spread
+
+const args = [1, 9, 7, 23, 5];
+const args2 = ["a", "b", "c", "d", "e"];
+
+console.log(args); // [1, 9, 7, 23, 5] --- отримали массив з елементами
+console.log(...args); // 1 9 7 23 5 --- отримали елементи массиву в рядок
+
+console.log(args2); // ['a', 'b', 'c', 'd', 'e'] --- отримали массив з елементами
+console.log(...args2); // a b c d e --- отримали елементи массиву в рядок
+
+// як це використовувати?
+// отримати суму всіх елементів args
+const func = (...rest) => {
+  console.log(
+    rest.reduce((acc, item) => {
+      return acc + item;
+    }, 0)
+  );
+};
+
+func(args); // 01,9,7,23,5 --- отримали тип string, хоча потрібно було переплюсувати всі елементи масиву
+func(...args); // 45 --- отримали суму всіх елементів масиву
+
+const func2 = (...rest) => {
+  rest.map((item) => console.log(`"${item}" +  is a letter`));
+};
+
+func2(args2); // "a,b,c,d,e" +  is a letter
+func2(...args2); // "a" +  is a letter "b" +  is a letter "c" +  is a letter "d" +  is a letter "e" +  is a letter
