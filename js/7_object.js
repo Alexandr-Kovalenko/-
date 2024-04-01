@@ -235,3 +235,55 @@ const color = "black";
 const { brand, carBody, color: color2, fuel } = myCar;
 
 console.log(brand, carBody, color, fuel); // Volkswagen hatchback grey benzine
+
+//               Прапорці та дескриптори властивостей
+
+// перглянути властивості ключа в об'єкті
+console.log(Object.getOwnPropertyDescriptor(myCar, "color"));
+// {value: 'grey', writable: true, enumerable: true, configurable: true}
+
+// перглянути властивості всих ключів в об'єкті
+console.log(Object.getOwnPropertyDescriptors(myCar));
+/*
+{brand: {…}, carBody: {…}, color: {…}, fuel: {…}}
+brand: {value: 'Volkswagen', writable: true, enumerable: true, configurable: true}
+carBody: {value: 'hatchback', writable: true, enumerable: true, configurable: true}
+color: {value: 'grey', writable: true, enumerable: true, configurable: true}
+fuel: {value: 'benzine', writable: true, enumerable: true, configurable: true}
+*/
+
+// змінити властивості ключа в об'єкті
+Object.defineProperty(myCar, "fuel", {
+  writable: false, // заборонити змінювати
+  enumerable: false, // заборонити перераховувати в циклах
+  configurable: false, // заборонити видаляти
+});
+
+// змінити властивості декількох ключів в об'єкті
+Object.defineProperties(myCar, {
+  brand: {
+    writable: false,
+    enumerable: false,
+    configurable: false,
+  },
+  carBody: {
+    writable: false,
+    enumerable: false,
+    configurable: false,
+  },
+});
+
+// заборонити додавати нові ключі
+Object.preventExtensions(myCar);
+// перевірити чи можна додавати нові ключі
+console.log(Object.isExtensible(myCar)); // false --- не можна
+
+// заборонити додавати нові ключі та видаляти старі
+Object.seal(myCar);
+// перевірити чи можна додавати нові ключі та видаляти старі
+console.log(Object.isSealed(myCar)); // true --- не можна
+
+// заборонити додавати нові ключі, видаляти та коригувати старі
+Object.freeze(myCar);
+// перевірити чи можна додавати нові ключі, видаляти та коригувати старі
+console.log(Object.isFrozen(myCar)); // true --- не можна

@@ -25,15 +25,3 @@ console.log(counter()); // 0
 console.log(counter()); // 1
 console.log(counter()); // 2
 console.log(counter()); // 3
-
-//
-
-const sayHi = () => {
-  let name = "Alex";
-  function writeHi() {
-    console.log(`Hi, ${name}!`);
-  }
-};
-
-sayHi();
-// writeHi();
