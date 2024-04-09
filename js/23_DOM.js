@@ -99,3 +99,66 @@ console.log(styles.padding, typeof(styles.padding)); // 16px string
 // щоб отримати число потрібно використати метод parseFloat()
 let padding = parseFloat(styles.padding);
 console.log(padding, typeof(padding)); // 16 'number'
+
+//             розміри та прокрутка
+const wrap = document.querySelector(".wrap");
+
+console.log(wrap.offsetLeft); // 16 --- позиціонування елементу по осі x
+console.log(wrap.offsetTop); // 490 --- позиціонування елементу по осі y
+
+console.log(wrap.offsetWidth); // 238 --- ширина елементу (контент + бордер + паддінги)
+console.log(wrap.offsetHeight); // 238 --- висота елементу (контент + бордер + паддінги)
+
+console.log(wrap.clientLeft); // 3 --- товщина рамки
+console.log(wrap.clientTop); // 3 --- товщина рамки
+
+console.log(wrap.clientWidth); // 215 --- ширина контенту в елементі + паддінги
+console.log(wrap.clientHeight); // 232 --- висота контенту в елементі + паддінги
+
+console.log(wrap.scrollHeight); // 732 --- повна ширина контенту в елементі + паддінги
+console.log(wrap.scrollWidth); // 215 --- повна висота контенту в елементі + паддінги
+
+console.log(document.documentElement.clientWidth); // 1349 --- ширина всього екрану
+console.log(document.documentElement.clientHeight); // 438 --- висота всього екрану
+
+console.log(window.pageXOffset); // вказує на те, скільки пікселів по осі X ми проскролили головний екран
+console.log(window.pageYOffset); // вказує на те, скільки пікселів по осі Y ми проскролили головний екран
+
+// проскролити головний екран
+// setTimeout(()=>{
+//   window.scrollBy(0, 200);
+// }, 10000);
+
+// заборонити скрол головного екрану
+// setTimeout(()=>{
+//   document.body.style.overflow = "hidden";
+// }, 5000);
+
+//              браузерні події
+const wrapperItem2 = document.getElementById("w2");
+
+const printHello = (event) => {
+  alert("Hello");
+  console.log(event);
+  console.log(event.currentTarget);
+}
+
+const printHello2 = () => {
+  alert("Hello2");
+}
+
+wrapperItem2.addEventListener("click", printHello);
+wrapperItem2.addEventListener("click", printHello2);
+wrapperItem2.removeEventListener("click", printHello2); // видалити слухача
+
+const parent = document.querySelector(".parent");
+// const child = document.querySelectorAll(".child");
+
+const toggleActiveChild = (event) => {
+  // event.stopPropagation();
+  event.target.classList.toggle("active-child");
+  // console.log(event.target);
+  // console.log(event.currentTarget);
+}
+
+parent.addEventListener("click", toggleActiveChild);
