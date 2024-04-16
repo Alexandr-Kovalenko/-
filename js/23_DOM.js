@@ -1,7 +1,7 @@
-const div1 = document.getElementById("div1");
-const divs = document.querySelectorAll(".div");
-const allDivs = document.querySelectorAll("div");
-const header = document.querySelector("header");
+// const div1 = document.getElementById("div1");
+// const divs = document.querySelectorAll(".div");
+// const allDivs = document.querySelectorAll("div");
+// const header = document.querySelector("header");
 
 // setTimeout(() => {
 //   divs.forEach((div) => {
@@ -136,11 +136,18 @@ console.log(window.pageYOffset); // вказує на те, скільки пі�
 
 //              браузерні події
 const wrapperItem2 = document.getElementById("w2");
+const wrapperItem3 = document.getElementById("w3");
+const wrapperItem4 = document.getElementById("w4");
+const wrapperItem5 = document.getElementById("w5");
+const wrapperItem6 = document.getElementById("w6");
+const wrapperItem7 = document.getElementById("w7");
+const wrapperItem8 = document.getElementById("w8");
+const wrapperItem9 = document.getElementById("w9");
+const wrapperItem10 = document.querySelector("#w10");
+const wrapperItem11 = document.querySelector("#w11");
 
-const printHello = (event) => {
-  alert("Hello");
-  console.log(event);
-  console.log(event.currentTarget);
+const printHello = () => {
+  console.log("Click");
 }
 
 const printHello2 = () => {
@@ -150,6 +157,16 @@ const printHello2 = () => {
 wrapperItem2.addEventListener("click", printHello);
 wrapperItem2.addEventListener("click", printHello2);
 wrapperItem2.removeEventListener("click", printHello2); // видалити слухача
+
+wrapperItem3.addEventListener("dblclick", () => {console.log("dblclick")});
+wrapperItem4.addEventListener("mousedown", () => {console.log("mousedown")});
+wrapperItem5.addEventListener("mouseup", () => {console.log("mouseup")});
+wrapperItem6.addEventListener("contextmenu", () => {console.log("contextmenu")});
+wrapperItem7.addEventListener("mouseover", () => {console.log("mouseover")});
+wrapperItem8.addEventListener("mouseout", () => {console.log("mouseout")});
+wrapperItem9.addEventListener("mousemove", () => {console.log("mousemove")});
+wrapperItem10.addEventListener("keydown", () => {console.log("keydown")});
+wrapperItem11.addEventListener("keyup", () => {console.log("keyup")});
 
 const parent = document.querySelector(".parent");
 // const child = document.querySelectorAll(".child");
@@ -162,3 +179,40 @@ const toggleActiveChild = (event) => {
 }
 
 parent.addEventListener("click", toggleActiveChild);
+
+//          Властивості та події елементів форми
+const form = document.querySelector("#login-form");
+console.log(form);
+
+const elementsLoginForm = form.elements;
+console.log(elementsLoginForm);
+
+const formLogin = form.elements.login;
+console.log(formLogin);
+
+const formLoginValue = form.elements.login.value;
+console.log(formLoginValue);
+
+const formChecboxChecked = form.elements.checkbox.checked;
+console.log(formChecboxChecked); // false
+
+const formSelect = form.elements.language;
+console.log(formSelect.options);
+console.log(formSelect.value);
+console.log(formSelect.selectedIndex);
+
+formLogin.addEventListener("focus", () => {
+  console.log("focus");
+});
+
+formLogin.addEventListener("blur", () => {
+  console.log("blur");
+});
+
+// formLogin.addEventListener("change", () => {
+//   console.log("change");
+// });
+
+formLogin.addEventListener("input", () => {
+  console.log(formLogin.value);
+});

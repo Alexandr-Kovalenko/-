@@ -4,8 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <script src="../js/23_DOM.js"></script>
+    <header>
+      <div class="div" id="div1">DIV1</div>
+      <div class="div">DIV2</div>
+      <div class="div">DIV3</div>
+      <div class="div">DIV4</div>
+      <div>DIV5</div>
+    </header>
+    <div class="div red-text" id="div10">Div10</div>
+    <div class="wrapper">
+      <div class="wrapper__item">ITEM</div>
+    </div>
+    <div class="wrap">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Consectetur temporibus sunt provident dolor repellat officiis, 
+        eveniet impedit! Alias aspernatur distinctio natus rerum accusamus, 
+        eius, autem laudantium, eligendi cumque amet nobis?</p>
+    </div>
+    <div class="block">
+      <div class="block__item" id="w1" onclick="alert('Click (onclick in HTML)')">onclick</div>
+      <div class="block__item" id="w2">click</div>
+      <div class="block__item" id="w3">dblclick</div>
+      <div class="block__item" id="w4">mousedown</div>
+      <div class="block__item" id="w5">mouseup</div>
+      <div class="block__item" id="w6">contextmenu</div>
+      <div class="block__item" id="w7">mouseover</div>
+      <div class="block__item" id="w8">mouseout</div>
+      <div class="block__item" id="w9">mousemove</div>
+      <div class="block__item" id="w10">keydown</div>
+      <div class="block__item" id="w11">keyup</div>
+    </div>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div>
+      <div class="child">8</div>
+      <div class="child">9</div>
+      <div class="child">10</div>
+    </div>
+
+    <section class="form-section">
+      <form action="#" name="login-form" id="login-form">
+        <div>
+          <input type="text" name="login" placeholder="Login">
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+          <input type="checkbox" name="checkbox">
+        </div>
+        <div>
+          <select name="language" id="language">
+            <option value="ua">UA</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit">Submit form</button>
+        </div>
+      </form>
+    </section>
+    <script src="./js/23_DOM.js"></script>
   </body>
 </html>
+
