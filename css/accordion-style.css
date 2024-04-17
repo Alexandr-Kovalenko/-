@@ -1,0 +1,17 @@
+.accordion-header {
+  background-color: #eee;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px dashed #000;
+}
+.accordion-header.active {
+  background-color: #bdbdbd;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+.accordion-content.active {
+  display: block;
+}
