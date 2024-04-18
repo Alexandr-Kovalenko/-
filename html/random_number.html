@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/random_number.css" />
+  </head>
+  <body>
+    <section id="generate-section">
+      <h2>Генератор випадкового числа</h2>
+      <div>
+        <label for="minValue">Мінімальне значення:</label>
+        <input type="number" id="minValue" min="0" />
+      </div>
+      <div>
+        <label for="maxValue">Максимальне значення:</label>
+        <input type="number" id="maxValue" min="0" />
+      </div>
+      <button id="generateBtn">Сгенерувати число</button>
+      <div id="result"></div>
+      <div class="post-wrapper"></div>
+    </section>
+
+    <script src="../js/random_number.js"></script>
+  </body>
+</html>
